@@ -1,27 +1,143 @@
-<!-- root node / document node (logical node)-->
 <!DOCTYPE html>
 <html lang="en">
-<!-- root element/document element-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-    <script src="dom-inclass.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>DOM Practice Playground</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f3f4f6;
+      color: #333;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e40af;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1e3a8a;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .stars span {
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div id="exampleElement" style="font-size: 10pt"><!-- this is a comment node -->
-      This is some <span style="display: none">hidden</span> text content.
-    </div>
-    <div id="subject">
-        <p>INT140</p>
-        <!-- <p></p> -->
-    </div>
-    <div>
-        <h1>DOM Example</h1>
-    </div>
-    <div>
-        <p>#1</p>
-        <p>#2</p>
-    </div>
+  <h1>🎯 DOM Practice Playground</h1>
+
+  <div class="container">
+
+    <!-- 1️⃣ เปลี่ยนสีพื้นหลัง -->
+    <section class="card">
+      <h2>1️⃣ Change Background Color</h2>
+      <p id="colorName">Current color: #f3f4f6</p>
+      <button id="btnBg">Change Background</button>
+    </section>
+
+    <!-- 2️⃣ เพิ่มรายการหนังโปรด -->
+    <section class="card">
+      <h2>2️⃣ Add Favorite Movies</h2>
+      <ul id="movieList">
+        <li>Inception</li>
+        <li>Interstellar</li>
+      </ul>
+      <button id="btnAddMovie">Add Movie</button>
+    </section>
+
+    <!-- 3️⃣ Toggle Lamp -->
+    <section class="card">
+      <h2>3️⃣ Toggle Lamp 💡</h2>
+      <img id="lamp" src="./img/off.png" alt="Lamp" />
+      <button id="btnLamp">Toggle Lamp</button>
+    </section>
+
+    <!-- 4️⃣ Stopwatch -->
+    <section class="card">
+      <h2>4️⃣ Stopwatch ⏱️</h2>
+      <p id="timer">0</p>
+      <button id="btnStart">Start</button>
+      <button id="btnStop">Stop</button>
+      <button id="btnReset">Reset</button>
+    </section>
+
+    <!-- 5️⃣ Rating Stars -->
+    <section class="card">
+      <h2>5️⃣ Star Rating ⭐</h2>
+      <div class="stars" id="starContainer">
+        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+      </div>
+      <p id="ratingText">You rated: 0 stars</p>
+    </section>
+
+    <!-- 6️⃣ Image Slider -->
+    <section class="card">
+      <h2>6️⃣ Image Slider 📸</h2>
+      <img id="slider" src="./img/img1.jpg" alt="Slider" />
+      <button id="btnNext">Next</button>
+    </section>
+
+    <!-- 7️⃣ Countdown -->
+    <section class="card">
+      <h2>7️⃣ Countdown ⏳</h2>
+      <input type="number" id="seconds" placeholder="Enter seconds" />
+      <button id="btnCountdown">Start Countdown</button>
+      <p id="countdownText"></p>
+    </section>
+
+    <!-- 8️⃣ Dark / Light Mode -->
+    <section class="card">
+      <h2>8️⃣ Dark / Light Mode 🌙</h2>
+      <button id="btnMode">Toggle Mode</button>
+    </section>
+
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
