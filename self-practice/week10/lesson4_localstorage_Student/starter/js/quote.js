@@ -1,9 +1,23 @@
-const quotes = []
+let quotes = []
 let nextId = 1
+
+function setQuotes(loadedQuotes) {
+  if (Array.isArray(loadedQuotes) && loadedQuotes.length > 0) {
+    quotes = loadedQuotes
+    nextId = Math.max(...quotes.map((q) => q.id)) + 1
+  } else {
+    quotes = []
+    nextId = 1
+  }
+}
+
 function addQuote(content, author) {
   const prevLength = quotes.length
   const newQuote = { id: nextId++, content, author }
-  if (quotes.push(newQuote) === prevLength + 1) return newQuote
+
+  if (quotes.push(newQuote) === prevLength + 1) {
+    return newQuote
+  }
   return undefined
 }
 
@@ -13,6 +27,7 @@ function updateQuote(id, content, author) {
     quote.content = content
     quote.author = author
   }
+
   return quote
 }
 
@@ -24,25 +39,20 @@ function deleteQuote(id) {
   return index
 }
 
+function getQuoteById(id) {
+  return quotes.find((q) => q.id === parseInt(id))
+}
+
 function getAllQuotes() {
   const currentQuotes = [...quotes]
   return currentQuotes
 }
 
-// 6. Test your functions below
-
-// Add 3 quotes
-console.log(addQuote('Stay hungry, stay foolish.', 'Steve Jobs'))
-console.log(addQuote('Do or do not. There is no try.', 'Yoda'))
-console.log(
-  addQuote('Simplicity is the ultimate sophistication.', 'Leonardo da Vinci')
-)
-
-// Delete 1 quote
-console.log(deleteQuote(2))
-
-// Update 1 quote
-console.log(updateQuote(1, 'Stay hungry. Stay foolish.', 'Jobs'))
-
-// Print all quotes
-console.log(getAllQuotes())
+export {
+  addQuote,
+  deleteQuote,
+  updateQuote,
+  getAllQuotes,
+  getQuoteById,
+  setQuotes, 
+}

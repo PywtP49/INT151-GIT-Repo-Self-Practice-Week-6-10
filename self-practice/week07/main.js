@@ -1,11 +1,3 @@
-// =============================
-// 🎯 DOM PRACTICE FILE (main.js)
-// =============================
-
-// ---------------------------------------------
-// 1️⃣ เปลี่ยนข้อความเมื่อคลิกปุ่ม
-// ---------------------------------------------
-
 // ดึงปุ่มและหัวข้อมาเก็บไว้ในตัวแปร
 const btnChange = document.getElementById("btnChange");
 const title = document.getElementById("title");
@@ -16,10 +8,8 @@ btnChange.addEventListener("click", () => {
   title.textContent = "Hello DOM! 👋";
 });
 
-// ---------------------------------------------
-// 2️⃣ เพิ่มรายการผลไม้ใหม่เข้าไปใน list
-// ---------------------------------------------
 
+// เพิ่มรายการผลไม้ใหม่เข้าไปใน list
 const btnAdd = document.getElementById("btnAdd");
 const fruitList = document.getElementById("fruitList");
 
@@ -31,10 +21,6 @@ btnAdd.addEventListener("click", () => {
   // เพิ่มเข้าไปใน <ul>
   fruitList.appendChild(newFruit);
 });
-
-// ---------------------------------------------
-// 3️⃣ ปุ่มซ่อน/แสดงข้อความ (Toggle)
-// ---------------------------------------------
 
 const btnToggle = document.getElementById("btnToggle");
 const message = document.getElementById("message");
@@ -49,10 +35,6 @@ btnToggle.addEventListener("click", () => {
   }
 });
 
-// ---------------------------------------------
-// 4️⃣ นับจำนวนครั้งที่กดปุ่ม
-// ---------------------------------------------
-
 const btnCount = document.getElementById("btnCount");
 const countText = document.getElementById("count");
 let counter = 0;
@@ -61,10 +43,6 @@ btnCount.addEventListener("click", () => {
   counter++;
   countText.textContent = `Clicked: ${counter} times`;
 });
-
-// ---------------------------------------------
-// 5️⃣ ปุ่มให้ใส่ชื่อ แล้วแสดงคำทักทาย
-// ---------------------------------------------
 
 const btnName = document.getElementById("btnName");
 const greeting = document.getElementById("greeting");
@@ -76,10 +54,6 @@ btnName.addEventListener("click", () => {
     greeting.textContent = `Hello, ${name}! 😊`;
   }
 });
-
-// ---------------------------------------------
-// 6️⃣ Pop Cat Clicker (ภาพเปลี่ยน + นับแต้ม)
-// ---------------------------------------------
 
 const popCat = document.getElementById("popCat");
 const popScore = document.getElementById("popScore");
@@ -101,10 +75,6 @@ popCat.addEventListener("click", () => {
     popCat.src = catClosed;
   }, 300);
 });
-
-// ---------------------------------------------
-// 7️⃣ ตัวอย่างการใช้ setInterval() (แถม)
-// ---------------------------------------------
 
 // โค้ดนี้จะเปลี่ยนสีพื้นหลังทุกๆ 1 วินาที
 // (สามารถใส่ปุ่มเปิด-ปิดเพิ่มได้หากอยากฝึกต่อ)

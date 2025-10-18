@@ -1,0 +1,129 @@
+============================
+SELF-PRACTICE PROGRESSION
+============================
+
+WEEK 06 – Arrays / Objects / Functions
+-----------------------------------------
+const fruits = ["Apple", "Banana", "Orange"]  
+=> สร้าง array เก็บค่าผลไม้
+
+fruits.push("Mango")  
+=> เพิ่มสมาชิกใหม่เข้า array
+
+const person = { name: "John", age: 25 }  
+=> สร้าง object เก็บข้อมูลบุคคล
+
+function greet(name) {  
+  console.log("Hello " + name)  
+}  
+=> สร้างฟังก์ชันเพื่อแสดงคำทักทาย
+
+const numbers = [1, 2, 3, 4, 5].map(n => n * 2)  
+=> ใช้ map เพื่อเปลี่ยนค่าทุกตัวใน array
+
+const even = [1, 2, 3, 4, 5].filter(n => n % 2 === 0)  
+=> ใช้ filter เพื่อเลือกเฉพาะเลขคู่
+
+const sum = [1, 2, 3].reduce((a, b) => a + b, 0)  
+=> ใช้ reduce เพื่อรวมผลรวมใน array
+
+สรุป
+=> ฝึกโครงสร้างข้อมูลพื้นฐาน (Array/Object) และการใช้ฟังก์ชันจัดการข้อมูล
+
+
+WEEK 07 – Function + Logic Practice
+--------------------------------------
+function add(a, b) { return a + b }  
+=> ฟังก์ชันบวกเลขสองค่า
+
+function checkEven(num) {  
+  return num % 2 === 0 ? "Even" : "Odd"  
+}  
+=> ใช้ if/ternary ตรวจเลขคู่คี่
+
+const user = { name: "Alice", age: 22 }  
+=> เก็บข้อมูลผู้ใช้ใน object
+
+function displayUser(u) {  
+  console.log(`${u.name} (${u.age})`)  
+}  
+=> แสดงข้อมูลใน console
+
+สรุป  
+=> ฝึกใช้ logic, parameter, return และ object ในฟังก์ชัน
+
+
+WEEK 08 – DOM Manipulation (Elements)
+----------------------------------------
+const title = document.querySelector("h1")  
+=> เข้าถึง element h1
+
+title.textContent = "Hello DOM!"  
+=> เปลี่ยนข้อความใน h1
+
+const list = document.getElementById("fruits")  
+=> ดึง ul หรือ ol ตาม id
+
+const li = document.createElement("li")  
+li.textContent = "Mango"  
+list.appendChild(li)  
+=> สร้าง li ใหม่แล้วเพิ่มเข้า list
+
+document.body.style.backgroundColor = "lightblue"  
+=> เปลี่ยนสีพื้นหลังของเว็บ
+
+สรุป  
+=> เริ่มจับต้อง DOM ได้ทั้งอ่าน, แก้ไข, สร้าง element และเปลี่ยน style ได้เอง
+
+
+WEEK 09 – Events & Interaction
+---------------------------------
+const btn = document.getElementById("changeText")  
+btn.addEventListener("click", () => {  
+  document.querySelector("h1").textContent = "Clicked!"  
+})  
+=> ผูก event click แล้วเปลี่ยนข้อความ
+
+const toggle = document.getElementById("toggle")  
+toggle.addEventListener("click", () => {  
+  const box = document.getElementById("box")  
+  box.classList.toggle("hide")  
+})  
+=> ซ่อน/แสดง element ด้วย classList.toggle()
+
+const input = document.getElementById("nameInput")  
+input.addEventListener("input", () => console.log(input.value))  
+=> อ่านค่าที่พิมพ์จากช่อง input แบบเรียลไทม์
+
+สรุป  
+=> เข้าใจการผูก event, ใช้ DOM event handler, สร้าง interaction ในหน้าเว็บ
+
+
+WEEK 10 – LocalStorage + Data Persistence
+--------------------------------------------
+localStorage.setItem("username", "poonyawat")  
+=> เก็บข้อมูลลงใน localStorage
+
+const user = localStorage.getItem("username")  
+=> ดึงค่าที่เก็บไว้มาใช้
+
+localStorage.removeItem("username")  
+=> ลบข้อมูลจาก localStorage
+
+const quotes = []  
+function addQuote(content, author) {  
+  const newQuote = { id: Date.now(), content, author }  
+  quotes.push(newQuote)  
+  localStorage.setItem("quotes", JSON.stringify(quotes))  
+}  
+=> เพิ่ม quote ใหม่แล้วบันทึกไว้ใน localStorage
+
+function loadQuotes() {  
+  const data = JSON.parse(localStorage.getItem("quotes")) || []  
+  return data  
+}  
+=> โหลดข้อมูลกลับมาใช้เมื่อเปิดหน้าเว็บใหม่
+
+สรุป  
+=> ฝึกการเก็บ/เรียกข้อมูลใน browser ด้วย localStorage, รู้วิธี serialize/deserialize (JSON)
+
